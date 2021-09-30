@@ -54,7 +54,52 @@ const apache = `[![License](https://img.shields.io/badge/License-Apache%202.0-bl
 
 // TODO: Create an array of questions for user input
 const questions = [
-
+    {
+        type: `input`,
+        message: `What's your project called?`,
+        name: `projectName`,
+    },
+    {
+        type: `input`,
+        message: `Write a description of your project.`,
+        name: `description`,
+    },
+    {
+        type: `input`,
+        message: `Write instructions to install your project.`,
+        name: `install`,
+    },
+    {
+        type: `input`,
+        message: `Write instructions on how to use your project.`,
+        name: `usage`,
+    },
+    {
+        type: `input`,
+        message: `Write instructions on how to make contributions to your project.`,
+        name: `contributions`,
+    },
+    {
+        type: `input`,
+        message: `Write instructions on how to test your project.`,
+        name: `tests`,
+    },
+    {
+        type: `input`,
+        message: `What is your Github username?`,
+        name: `github`,
+    },
+    {
+        type: `input`,
+        message: `What's your email address?`,
+        name: `email`,
+    },
+    {
+        type: 'list',
+        message: 'Under which license would you like your project covered?',
+        name: 'license',
+        choices: ['MIT', 'GNU GPL', 'Apache'],
+      },
 ];
 
 // TODO: Create a function to write README file
