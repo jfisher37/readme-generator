@@ -1,7 +1,61 @@
 // TODO: Include packages needed for this application
 
+const fs = require(`fs`);
+const inquirer = require(`inquirer`);
+
+//create a template for readme
+
+const template = `# ${response.projectName}
+${chosenLicense}
+
+## Description
+${response.description} 
+
+## Table of Contents 
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing] (#contributing)
+- [Tests] (#tests)
+- [Questions] (#questions)
+
+## Installation
+${response.install}
+
+
+## Usage
+${response.usage}
+
+## License
+This project is covered by a ${response.license} license.
+
+## Contributing
+If you want to make contributions, please refer to the following instructions:
+
+${response.contributions}
+
+## Tests
+${response.tests}
+
+## Questions
+Please refer to the below contact information for any questions:
+
+Github Profile - ${response.github}
+Github Profile Link - https://github.com/${response.github}
+Email - ${response.email}
+
+`;
+
+//create license badges
+
+const mit = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+const gnuGpl = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`
+const apache = `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
+
 // TODO: Create an array of questions for user input
-const questions = [];
+const questions = [
+
+];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
