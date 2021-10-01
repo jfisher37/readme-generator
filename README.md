@@ -19,6 +19,10 @@ In order to install this generator, please git clone from its repo on Github.
 ## Usage
 To use the README generator, run the application using node, and then answer the prompts in as much detail as possible. 
 
+Please see the link below for a video on how to use the README generator:
+
+https://drive.google.com/file/d/1zHl_s3UnP7vC-wHQcDbJwpTSI7ALW5gM/view?usp=sharing
+
 ## License
 This project is covered by a MIT license.
 
