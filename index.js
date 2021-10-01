@@ -5,46 +5,7 @@ const inquirer = require(`inquirer`);
 
 //create a template for readme
 
-const template = `# ${response.projectName}
-${chosenLicense}
 
-## Description
-${response.description} 
-
-## Table of Contents 
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributing] (#contributing)
-- [Tests] (#tests)
-- [Questions] (#questions)
-
-## Installation
-${response.install}
-
-
-## Usage
-${response.usage}
-
-## License
-This project is covered by a ${response.license} license.
-
-## Contributing
-If you want to make contributions, please refer to the following instructions:
-
-${response.contributions}
-
-## Tests
-${response.tests}
-
-## Questions
-Please refer to the below contact information for any questions:
-
-Github Profile - ${response.github}
-Github Profile Link - https://github.com/${response.github}
-Email - ${response.email}
-
-`;
 
 //create license badges
 
@@ -99,14 +60,75 @@ const questions = [
         message: 'Under which license would you like your project covered?',
         name: 'license',
         choices: ['MIT', 'GNU GPL', 'Apache'],
-      },
+    },
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+
+
+
+
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer
+        .prompt(questions)
+        .then((response) => {
+            if(response.license === `MIT`){
+                chosenLicense = mit;
+            }
+            else if(response.license === `GNU GPL`){
+                chosenLicense = gnuGpl;
+            }
+            else if (response.license === `Apache`){
+                chosenLicense = apache
+            };
+
+            const template = `# ${response.projectName}
+${chosenLicense}
+
+## Description
+${response.description} 
+
+## Table of Contents 
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
+## Installation
+${response.install}
+
+
+## Usage
+${response.usage}
+
+## License
+This project is covered by a ${response.license} license.
+
+## Contributing
+If you want to make contributions, please refer to the following instructions:
+
+${response.contributions}
+
+## Tests
+${response.tests}
+
+## Questions
+Please refer to the below contact information for any questions:
+
+Github Profile - ${response.github}\n
+Github Profile Link - https://github.com/${response.github}\n
+Email - ${response.email}
+
+`;
+            fs.writeFile(`${response.projectName}.md`, template, (err) =>
+        err ? console.log(err) : console.log('Success!')
+    );
+        })
+}
 
 // Function call to initialize app
 init();
